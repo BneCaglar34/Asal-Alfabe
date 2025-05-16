@@ -1,6 +1,5 @@
-# Türkçe harfler ve asal sayı eşleşmeleri
-ASAL_ALFABE = {
-    ' ': 0,
+# Temel Asal Alfabe
+TEMEL_ALFABE = {
     'a': 2, 'b': 3, 'c': 5, 'ç': 7, 'd': 11,
     'e': 13, 'f': 17, 'g': 19, 'ğ': 23, 'h': 29,
     'ı': 31, 'i': 37, 'j': 41, 'k': 43, 'l': 47,
@@ -9,5 +8,16 @@ ASAL_ALFABE = {
     'ü': 101, 'v': 103, 'y': 107, 'z': 109
 }
 
-# Ters eşleme (sayı → harf)
-TERS_ALFABE = {sayi: harf for harf, sayi in ASAL_ALFABE.items()}
+# 4 Kaydırmalı Asal Alfabe (Sonraki 4 asal sayı)
+KAYDIRMALI_ALFABE = {
+    'a': 11, 'b': 13, 'c': 17, 'ç': 19, 'd': 23,
+    'e': 29, 'f': 31, 'g': 37, 'ğ': 41, 'h': 43,
+    'ı': 47, 'i': 53, 'j': 59, 'k': 61, 'l': 67,
+    'm': 71, 'n': 73, 'o': 79, 'ö': 83, 'p': 89,
+    'r': 97, 's': 101, 'ş': 103, 't': 107, 'u': 109,
+    'ü': 2, 'v': 3, 'y': 5, 'z': 7
+}
+
+# Ters eşlemeler
+TERS_TEMEL = {v: k for k, v in TEMEL_ALFABE.items()}
+TERS_KAYDIRMALI = {v: k for k, v in KAYDIRMALI_ALFABE.items()}
