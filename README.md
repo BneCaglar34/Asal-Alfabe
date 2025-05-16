@@ -1,14 +1,20 @@
-# Türkçe Harf-Asal Sayı Şifreleyici
+# Türkçe Asal Şifreleyici (Temel + 4 Kaydırmalı)
 
-Bu proje, Türkçe harfleri önceden tanımlanmış asal sayılarla eşleştirerek şifreleme ve çözme yapar.
+## 🔢 Alfabe Sistemleri
+1. **Temel Asal Alfabe**  
+   `a=2, b=3, c=5,..., z=109`
 
-## 📌 Özellikler
-- **Harf → Asal Sayı** (Örn: `a` → `2`, `ş` → `83`)
-- **Asal Sayı → Harf** (Örn: `13` → `e`, `101` → `ü`)
-- Tüm Türkçe karakter desteği (`ç, ğ, ı, ö, ş, ü`)
+2. **4 Kaydırmalı Asal Alfabe**  
+   `a=113, b=127, c=131,..., z=271`  
+   *(Temel alfabenin devamındaki 4. asal sayılar)*
 
-## 🛠 Kurulum
-1. Python 3.x yüklü olduğundan emin olun
-2. Bu depoyu klonlayın:
-   ```bash
-   git clone https://github.com/sizin-kullanici-adiniz/turkce-asal-sifreleyici.git
+## 🎯 Kullanım
+```python
+# Temel alfabe ile şifrele
+sifrele("merhaba", kaydirma=False) → [53, 13, 73, 29, 3, 2, 2]
+
+# 4 kaydırmalı alfabe ile şifrele
+sifrele("merhaba", kaydirma=True) → [197, 149, 229, 167, 127, 113, 113]
+
+# Çözme (kaydirma parametresi eşleşmeli)
+coz([197, 149, 229], kaydirma=True) → "mer"
